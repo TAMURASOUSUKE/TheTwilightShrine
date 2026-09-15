@@ -1,10 +1,11 @@
 #include <TSLib.h>
-#include "Src/Constant/SystemConstant.h"
 
 // エントリーポイント
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
 	// ライブラリ初期化
+	constexpr int WINDOW_WIDTH{ 1920 }; // 画面横幅
+	constexpr int WINDOW_HEIGHT{ 1080 }; // 画面縦幅
 	if (!TSLib::Initialize(L"黄昏の社", WINDOW_WIDTH, WINDOW_HEIGHT)) return -1;
 
 	// ゲームループ(後でApplicationファイルへと分離)
