@@ -1,5 +1,6 @@
 #include <TSLib.h>
 
+
 // エントリーポイント
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
