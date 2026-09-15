@@ -1,0 +1,10 @@
+name: 不具合報告
+description: 本来の動作にならない問題を報告する
+labels:
+  - "type:bug"
+
+body:
+  - type: markdown # 書き方の説明
+    attributes:
+      value: |
+        発生した動作、期待していた動作、再現手順、実行環境を整理してください。
