@@ -7,10 +7,10 @@ body:
   - type: markdown # 書き方の説明
     attributes:
       value: |
-        発開発を進めるための内部作業手順を整理してください。
+        開発を進めるために必要な背景、作業項目、完了条件を整理してください。
 
   - type: textarea # ユーザーが実際に入力する欄
-    id: obejctive # github側が読み込むid
+    id: objective # github側が読み込むid
     attributes:
       label: 背景・目的  # 入力欄の見出し
       description: なぜこの作業が必要かを書く。 # その説明
@@ -22,8 +22,11 @@ body:
     id: work
     attributes:
       label: 作業項目
+      value: |
+        - [ ] 作業1
+        - [ ] 作業2
+        - [ ] 作業3
       description: 具体的に何をするかを書く。
-      placeholder: "例: 作成したクラス構造を整理する"
     validations:
       required: true # 入力必須
 
