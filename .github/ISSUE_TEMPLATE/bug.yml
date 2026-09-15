@@ -13,7 +13,7 @@ body:
     attributes:
       label: 実際に起きた動作  # 入力欄の見出し
       description: 画面やログで確認した事実を書く。 # その説明
-      placeholder: "例: 一定の条件で通常のダッシュより速くなる" # 例
+      placeholder: "例: 一定の条件で通常の速度より速くなる" # 例
     validations: # 入力検証
       required: true # 入力が必須か
   - type: textarea
@@ -21,21 +21,43 @@ body:
     attributes:
       label: 期待していた動作
       description: 想定していた動作や期待していた出力結果を書く。
-      placeholder: "例: ダッシュをしたら設定されているダッシュ速度になる"
+      placeholder: "例: 移動をしたら設定されている速度が維持される"
     validations:
       required: true # 入力必須
   - type: textarea
-    id: reaction # 再現条件
-    label: 
-    attributes: バグを再現する手順があれば書く。
+    id: reproduction # 再現条件
+    attributes: 
+      label: 再現条件
+      description: |
+        どの条件で発生し、発生までに何を操作したかを書く。
+        再現できない場合は、発生直前の操作を書く。
+      placeholder: "例: スティックを斜めに倒したときだけ速度が速くなった"
+    validations:
+      required: false # 再現性のないバグも存在するので入力必須にしない
+  - type: textarea
+    id: environment # 実行環境
+    attributes: 
+      label: 実行環境
       value: |
-        - [ ] 条件1
-        - [ ] 条件2
-        - [ ] 条件3
-      description: 何が確認できたらこのIssueを閉じられるかを書く。
+        #### 【OS】
+        Windows11
+        #### 【ビルド】
+        Debug x64
+        #### 【実行物】
+        
+        #### 【GPU】
+        NVIDIA
+      description: バグが起こった実行環境を書く。
     validations:
       required: true # 入力必須
-
+  - type: textarea
+    id: log # ログなど
+    attributes: 
+      label: ログ・画像・補足情報
+      description: ログ、スクリーンショット、動画などを添付する。
+      placeholder: "例: スティックを斜めに倒したときだけ速度が速くなった"
+    validations:
+      required: false # 入力必須ではない
   - type: dropdown # ドロップダウンリストを表示する
     id: area # 作業対象を表す
     attributes:
