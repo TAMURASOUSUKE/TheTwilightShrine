@@ -8,6 +8,7 @@ body:
     attributes:
       value: |
         発生した動作、期待していた動作、再現手順、実行環境を整理してください。
+        
   - type: textarea # ユーザーが実際に入力する欄
     id: actual # github側が読み込むid
     attributes:
@@ -16,6 +17,7 @@ body:
       placeholder: "例: 一定の条件で通常の速度より速くなる" # 例
     validations: # 入力検証
       required: true # 入力が必須か
+
   - type: textarea
     id: expected
     attributes:
@@ -24,6 +26,7 @@ body:
       placeholder: "例: 移動をしたら設定されている速度が維持される"
     validations:
       required: true # 入力必須
+
   - type: textarea
     id: reproduction # 再現条件
     attributes: 
@@ -34,6 +37,7 @@ body:
       placeholder: "例: スティックを斜めに倒したときだけ速度が速くなった"
     validations:
       required: false # 再現性のないバグも存在するので入力必須にしない
+
   - type: textarea
     id: environment # 実行環境
     attributes: 
@@ -52,6 +56,7 @@ body:
       description: バグが起こった実行環境を書く。
     validations:
       required: true # 入力必須
+
   - type: textarea
     id: log # ログなど
     attributes: 
@@ -60,6 +65,7 @@ body:
       placeholder: "例: Debug出力、例外メッセージ、スクリーンショット、動画を添付"
     validations:
       required: false # 入力必須ではない
+
   - type: dropdown # ドロップダウンリストを表示する
     id: area # 作業対象を表す
     attributes:

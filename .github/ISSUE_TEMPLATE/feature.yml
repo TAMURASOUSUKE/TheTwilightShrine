@@ -8,6 +8,7 @@ body:
     attributes:
       value: |
         実装前に、問題、設計方針、完了条件を整理してください。
+
   - type: textarea # ユーザーが実際に入力する欄
     id: problem # github側が読み込むid
     attributes:
@@ -16,6 +17,7 @@ body:
       placeholder: "例: テクスチャが描画されない" # 例
     validations: # 入力検証
       required: true # 入力が必須か
+
   - type: textarea
     id: design
     attributes:
@@ -31,6 +33,7 @@ body:
       description: このIssueで問題をどのように解決するのか、またその採用理由を書く。
     validations:
       required: true # 入力必須
+      
   - type: textarea
     id: completion # 完了条件
     attributes:

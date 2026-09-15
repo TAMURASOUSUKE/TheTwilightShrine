@@ -8,6 +8,7 @@ body:
     attributes:
       value: |
         発開発を進めるための内部作業手順を整理してください。
+        
   - type: textarea # ユーザーが実際に入力する欄
     id: obejctive # github側が読み込むid
     attributes:
@@ -16,6 +17,7 @@ body:
       placeholder: "例: 依存順やその関係を明確にしたい" # 例
     validations: # 入力検証
       required: true # 入力が必須か
+
   - type: textarea
     id: work
     attributes:
@@ -24,6 +26,7 @@ body:
       placeholder: "例: 作成したクラス構造を整理する"
     validations:
       required: true # 入力必須
+
   - type: textarea
     id: completion # 完了条件
     attributes:
@@ -35,6 +38,7 @@ body:
       description: どの結果を確認できたら閉じるかを書く。
     validations:
       required: true # 入力必須
+
   - type: dropdown # ドロップダウンリストを表示する
     id: area # 作業対象を表す
     attributes:
