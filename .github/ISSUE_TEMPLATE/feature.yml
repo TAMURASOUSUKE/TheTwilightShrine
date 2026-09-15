@@ -33,7 +33,7 @@ body:
       description: このIssueで問題をどのように解決するのか、またその採用理由を書く。
     validations:
       required: true # 入力必須
-      
+
   - type: textarea
     id: completion # 完了条件
     attributes:
@@ -62,6 +62,7 @@ body:
         - "area:input" # 入力系(コントローラー、キー、マウス)
         - "area:build" # SDK配布ビルドなど
         - "area:repository" # IssueやGit、テンプレート関連
+        - "area:documentation" # README・設定資料・操作説明など
         - "area:other" # どれも該当しないもの
     validations:
       required: true # 入力必須

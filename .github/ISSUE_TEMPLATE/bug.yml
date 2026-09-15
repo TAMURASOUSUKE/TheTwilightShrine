@@ -8,7 +8,7 @@ body:
     attributes:
       value: |
         発生した動作、期待していた動作、再現手順、実行環境を整理してください。
-        
+
   - type: textarea # ユーザーが実際に入力する欄
     id: actual # github側が読み込むid
     attributes:
@@ -82,6 +82,7 @@ body:
         - "area:input" # 入力系(コントローラー、キー、マウス)
         - "area:build" # SDK配布ビルドなど
         - "area:repository" # IssueやGit、テンプレート関連
+        - "area:documentation" # README・設定資料・操作説明など
         - "area:other" # どれも該当しないもの
     validations:
       required: true # 入力必須
