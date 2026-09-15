@@ -24,6 +24,9 @@ public:
 	// シーンの更新
 	void Update();
 
+	// シーンの固定更新
+	void FixedUpdate();
+
 	// シーンの描画
 	void Draw();
 

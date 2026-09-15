@@ -12,6 +12,8 @@ public:
 	virtual void Initialize() = 0;
 	// シーン更新中の処理
 	virtual void Update() = 0;
+	// シーン中の固定更新
+	virtual void FixedUpdate() = 0;
 	// シーンを出るときの処理
 	virtual void Terminate() = 0;
 
