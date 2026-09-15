@@ -17,7 +17,7 @@ public:
 	}
 
 	// シーン登録関数
-	void Register(const std::unique_ptr<SceneBase>& _scene);
+	bool Register(const std::unique_ptr<SceneBase>& _scene);
 	// シーン変更関数(true = 成功)
 	bool ChangeScene(SceneType _nextScene);
 
@@ -36,5 +36,5 @@ private:
 
 private:
 	SceneType currentScene{ SceneType::None }; // 現在のシーン
-	std::vector<std::unique_ptr<SceneBase>> sceneBases{}; // 各シーンのポインタ
+	std::vector<std::unique_ptr<SceneBase>> scenes{}; // 各シーンのポインタ
 };
