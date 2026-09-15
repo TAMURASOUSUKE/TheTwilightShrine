@@ -1,10 +1,40 @@
 name: 機能追加・機能拡張
-description: 新しい機能を拡張する
+description: 新機能の追加、または既存機能の拡張を提案する
 labels:
   - "type:feature"
 
 body:
-  - type: markdown
+  - type: markdown # 書き方の説明
     attributes:
       value: |
         実装前に、問題、設計方針、完了条件を整理してください。
+  - type: textarea # ユーザーが実際に入力する欄
+    id: problem # github側が読み込むid
+    attributes:
+      label: 解決すべき問題  # 入力欄の見出し
+      description: このIssueで何を解決するのか、またなぜ解決しなければならないのかを書く。 # その説明
+      placeholder: テクスチャが描画されない # 例
+    validations: # 入力検証
+      required: true # 入力が必須か
+  - type: textarea
+    id: design 
+    attributes:
+      label: 設計方針
+      value: |
+        #### 【採用方法】
+
+        #### 【この方法を選ぶ理由】
+
+        #### 【メリット】
+
+        #### 【デメリット】
+      description: このIssueで問題をどのように解決するのか、またその採用理由を書く。
+    validations:
+      required: true # 入力必須
+
+
+
+
+
+
+      
