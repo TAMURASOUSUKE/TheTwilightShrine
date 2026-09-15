@@ -1,4 +1,5 @@
 #pragma once
+#include "../Constant/SceneConstant.h"
 
 // 各Sceneの基底クラスとなるクラス
 class SceneBase
@@ -16,5 +17,11 @@ public:
 
 	// シーンを描画する処理
 	virtual void Draw() = 0;
+
+	// 自身のシーンの種類取得関数
+	SceneType GetType() const { return type; }
+
+protected:
+	SceneType type{ SceneType::None };
 
 };
