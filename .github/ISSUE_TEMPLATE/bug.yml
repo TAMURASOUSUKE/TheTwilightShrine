@@ -43,10 +43,12 @@ body:
         Windows11
         #### 【ビルド】
         Debug x64
-        #### 【実行物】
-        
+        #### 【起動方法】
+        VisualStudio2026 / F5(デバッガーあり)
+        #### 【ブランチ・Commit】
+        feature/....(実際のbranch名やコミット名を書く)
         #### 【GPU】
-        NVIDIA
+        NVIDIA(実際のGPU名)
       description: バグが起こった実行環境を書く。
     validations:
       required: true # 入力必須
@@ -55,7 +57,7 @@ body:
     attributes: 
       label: ログ・画像・補足情報
       description: ログ、スクリーンショット、動画などを添付する。
-      placeholder: "例: スティックを斜めに倒したときだけ速度が速くなった"
+      placeholder: "例: Debug出力、例外メッセージ、スクリーンショット、動画を添付"
     validations:
       required: false # 入力必須ではない
   - type: dropdown # ドロップダウンリストを表示する
