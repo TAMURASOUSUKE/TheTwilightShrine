@@ -54,6 +54,7 @@ body:
       multiple: false # 対象領域は巨大Issueを避けるために一つにする(複数を不可)
       options:
         - "area:gameplay" # 移動、戦闘、敵、ゲームルールなど
+        - "area:scene" # 各シーンやシーン管理など
         - "area:rendering" # Shader,Material,Light,Shadow
         - "area:animation" # アニメーション、遷移
         - "area:world" # 地形、ステージ、背景配置など
