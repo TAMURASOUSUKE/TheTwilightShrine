@@ -7,6 +7,12 @@ SceneManager::SceneManager()
 	SceneFactory::Initialize(); // シーン生成関数登録
 }
 
+void SceneManager::Shutdown()
+{
+	scene.reset();
+	currentScene = SceneType::None;
+}
+
 bool  SceneManager::ChangeScene(SceneType _nextScene)
 {
 	if (_nextScene == currentScene) return false; // 同じシーンの時は処理をしない

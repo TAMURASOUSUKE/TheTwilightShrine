@@ -18,6 +18,8 @@ Application::Application()
 
 Application::~Application()
 {
+	// シーンマネージャー終了処理
+	SceneManager::Instance().Shutdown();
 	// ライブラリ終了処理
 	TSLib::Finish();
 }

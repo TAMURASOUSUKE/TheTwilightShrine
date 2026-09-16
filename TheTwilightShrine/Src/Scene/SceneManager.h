@@ -14,6 +14,10 @@ public:
 		static SceneManager instance;
 		return instance;
 	}
+
+	// 終了処理
+	void Shutdown();
+
 	// シーン変更関数(true = 成功)
 	bool ChangeScene(SceneType _nextScene);
 
