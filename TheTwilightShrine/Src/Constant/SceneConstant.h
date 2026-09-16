@@ -5,6 +5,6 @@
 enum class SceneType
 {
 	None,
-	Titel, // タイトル
+	Title, // タイトル
 	Game,  // ゲーム
 };

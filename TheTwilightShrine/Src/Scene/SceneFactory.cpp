@@ -8,7 +8,7 @@ std::map< SceneType, std::function<std::unique_ptr<SceneBase>()>> SceneFactory::
 
 void SceneFactory::Initialize()
 {
-	creationMap[SceneType::Titel] = []() { return std::make_unique<TitleScene>(); }; // タイトルシーン
+	creationMap[SceneType::Title] = []() { return std::make_unique<TitleScene>(); }; // タイトルシーン
 	creationMap[SceneType::Game] = []() { return std::make_unique<GameScene>(); }; // ゲームシーン
 }
 
