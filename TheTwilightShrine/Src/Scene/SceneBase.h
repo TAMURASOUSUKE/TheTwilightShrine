@@ -20,10 +20,7 @@ public:
 	// シーンを描画する処理
 	virtual void Draw() = 0;
 
-	// 自身のシーンの種類取得関数
-	SceneType GetType() const { return type; }
-
-protected:
-	SceneType type{ SceneType::None };
+	// 自身のシーンの種類取得関数 一旦Noneを返す
+	SceneType GetType() const { return SceneType::None; }
 
 };
