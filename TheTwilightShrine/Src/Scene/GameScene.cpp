@@ -8,20 +8,24 @@ void GameScene::Initialize()
 
 void GameScene::Update()
 {
+#ifdef _DEBUG
 	if (!isUpdate)
 	{
 		DEBUG_LOG("GameSceneのUpdateを通りました!\n");
 		isUpdate = true;
 	}
+#endif // _DEBUG
 }
 
 void GameScene::FixedUpdate()
 {
+#ifdef _DEBUG
 	if (!isFixedUpdate)
 	{
 		DEBUG_LOG("GameSceneのFixedUpdateを通りました!\n");
 		isFixedUpdate = true;
 	}
+#endif // _DEBUG
 }
 
 void GameScene::Terminate()

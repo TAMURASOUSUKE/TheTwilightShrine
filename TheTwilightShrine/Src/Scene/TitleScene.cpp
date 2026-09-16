@@ -8,20 +8,24 @@ void TitleScene::Initialize()
 
 void TitleScene::Update()
 {
+#ifdef _DEBUG
 	if (!isUpdate)
 	{
 		DEBUG_LOG("TitleSceneのUpdateを通りました!\n");
 		isUpdate = true;
 	}
+#endif // _DEBUG
 }
 
 void TitleScene::FixedUpdate()
 {
+#ifdef _DEBUG
 	if (!isFixedUpdate)
 	{
 		DEBUG_LOG("TitleSceneのFixedUpdateを通りました!\n");
 		isFixedUpdate = true;
 	}
+#endif // _DEBUG
 }
 
 void TitleScene::Terminate()
