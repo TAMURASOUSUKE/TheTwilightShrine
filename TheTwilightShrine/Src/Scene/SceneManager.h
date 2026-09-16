@@ -1,5 +1,4 @@
 #pragma once
-#include <vector>
 #include <memory>
 #include "SceneBase.h"
 #include "../Constant/SceneConstant.h"
@@ -15,9 +14,6 @@ public:
 		static SceneManager instance;
 		return instance;
 	}
-
-	// シーン登録関数
-	bool Register(const std::unique_ptr<SceneBase>& _scene);
 	// シーン変更関数(true = 成功)
 	bool ChangeScene(SceneType _nextScene);
 
@@ -36,5 +32,5 @@ private:
 
 private:
 	SceneType currentScene{ SceneType::None }; // 現在のシーン
-	std::vector<std::unique_ptr<SceneBase>> scenes{}; // 各シーンのポインタ
+	std::unique_ptr<SceneBase> scene{}; // シーンのポインタ
 };
