@@ -12,7 +12,7 @@ Application::Application()
 		isInitialized = false;
 		return;
 	}
-	SceneManager::Instance().ChangeScene(SceneType::Title); // とりあえず最初はタイトルから
+	SceneManager::Instance().RequestSceneChange(SceneType::Title); // とりあえず最初はタイトルから
 	isInitialized = true; // ここまで来たら成功とする
 }
 
@@ -29,6 +29,9 @@ void Application::Run()
 	// ゲームループ(後でApplicationファイルへと分離)
 	while (TSLib::ProcessMessage())
 	{
+		// フレームの最初で予約反映を行おうとする
+		SceneManager::Instance().ApplyPendingSceneChange();
+
 		TSLib::BeginFrame(); // フレーム開始処理
 
 		// シーン更新
@@ -41,8 +44,8 @@ void Application::Run()
 			Time::ConsumeFixedTime(); // 一回分の時間を消費
 		}
 
-		if (Input::IsKeyPushed(KeyCode::Button::T)) SceneManager::Instance().ChangeScene(SceneType::Title);
-		if (Input::IsKeyPushed(KeyCode::Button::G)) SceneManager::Instance().ChangeScene(SceneType::Game);
+		if (Input::IsKeyPushed(KeyCode::Button::T)) SceneManager::Instance().RequestSceneChange(SceneType::Title);
+		if (Input::IsKeyPushed(KeyCode::Button::G)) SceneManager::Instance().RequestSceneChange(SceneType::Game);
 
 		Gfx::ClearScreen(); // 画面クリア
 
