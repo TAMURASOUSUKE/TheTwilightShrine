@@ -13,6 +13,7 @@ public:
 	static void Initialize();
 
 	// 指定されたシーンを生成する
+	static std::unique_ptr<SceneBase> CreateScene(SceneType _type);
 
 private:
 	static std::map< SceneType, std::function<std::unique_ptr<SceneBase>()>> creationMap; // タイプをキーに生成を行う関数を返すマップ

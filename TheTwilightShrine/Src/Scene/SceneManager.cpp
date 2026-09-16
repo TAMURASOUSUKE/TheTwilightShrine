@@ -1,13 +1,15 @@
 #include <TSLib.h>
+#include "SceneFactory.h"
 #include "SceneManager.h"
 
 bool  SceneManager::ChangeScene(SceneType _nextScene)
 {
 	if (_nextScene == currentScene) return false; // 同じシーンの時は処理をしない
 
-	scene->Terminate(); // シーンを出るときの処理を行う
+	if(currentScene != SceneType::None) scene->Terminate(); // シーンを出るときの処理を行う(最初のシーン設定時にTerminateが走らないようにする)
 
-	currentScene = _nextScene; // 新しいシーンにする
+	scene = SceneFactory::CreateScene(_nextScene); // 新しいシーンを生成
+	currentScene = scene->GetType(); // シーンタイプを更新する
 
 	scene->Initialize(); // シーンに入るの処理を行う
 	

@@ -21,6 +21,6 @@ public:
 	virtual void Draw() = 0;
 
 	// 自身のシーンの種類取得関数 一旦Noneを返す
-	SceneType GetType() const { return SceneType::None; }
+	virtual SceneType GetType() const { return SceneType::None; }
 
 };
