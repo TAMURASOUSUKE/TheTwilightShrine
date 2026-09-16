@@ -4,6 +4,7 @@
 // 実際のタイトルシーンを作成する
 class TitleScene final : public SceneBase
 {
+public:
 	TitleScene() = default;
 	~TitleScene() = default;
 

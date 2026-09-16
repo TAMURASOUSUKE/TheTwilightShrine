@@ -19,7 +19,7 @@ void GameScene::FixedUpdate()
 {
 	if (!isFixedUpdate)
 	{
-		DEBUG_LOG("GameSceneのUpdateを通りました!\n");
+		DEBUG_LOG("GameSceneのFixedUpdateを通りました!\n");
 		isFixedUpdate = true;
 	}
 }

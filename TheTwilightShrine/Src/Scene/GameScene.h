@@ -4,6 +4,7 @@
 // 実際のゲームシーンを作成する
 class GameScene final : public SceneBase
 {
+public:
 	GameScene() = default;
 	~GameScene() = default;
 

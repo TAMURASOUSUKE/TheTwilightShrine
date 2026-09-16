@@ -2,6 +2,11 @@
 #include "SceneFactory.h"
 #include "SceneManager.h"
 
+SceneManager::SceneManager()
+{
+	SceneFactory::Initialize(); // シーン生成関数登録
+}
+
 bool  SceneManager::ChangeScene(SceneType _nextScene)
 {
 	if (_nextScene == currentScene) return false; // 同じシーンの時は処理をしない

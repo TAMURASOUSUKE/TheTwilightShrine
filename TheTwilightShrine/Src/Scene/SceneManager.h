@@ -28,7 +28,7 @@ public:
 
 
 private:
-	SceneManager() = default; // シングルトン化のためコンストラクタはprivate
+	SceneManager(); // シングルトン化のためコンストラクタはprivate
 
 private:
 	SceneType currentScene{ SceneType::None }; // 現在のシーン
