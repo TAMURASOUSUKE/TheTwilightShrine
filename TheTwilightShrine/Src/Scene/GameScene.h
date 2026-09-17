@@ -1,4 +1,5 @@
 #pragma once
+#include <TSLib.h>
 #include "SceneBase.h"
 
 // 実際のゲームシーンを作成する
@@ -31,6 +32,24 @@ private:
 #ifdef _DEBUG
 	bool isUpdate{ false }; // Update関数を通ったか
 	bool isFixedUpdate{ false }; // FixedUpdate関数を通ったか
+
+	Camera camera{};
+	SceneLight light{};
+
+	// モデル動作テスト(本来はResourceManagerの役目)
+	ModelHandle player{};
+	ModelHandle lowEnemy{};
+	ModelHandle boss{};
+	AnimInstanceHandle playerInstance{};
+	AnimInstanceHandle lowEnemyInstance{};
+	AnimInstanceHandle bossInstance{};
+	Transform playerTransform{};
+	Transform lowEnemyTransform{};
+	Transform bossTransform{};
+	int playerClipIndex{ 0 }; // PlayerのClipIndex
+	int lowEnemyClipIndex{ 0 }; // 雑魚敵のClipIndex
+	int bossClipIndex{ 0 }; // ボスのClipIndex
+
 #endif // _DEBUG
 
 };
