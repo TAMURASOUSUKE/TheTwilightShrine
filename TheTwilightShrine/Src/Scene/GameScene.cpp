@@ -5,17 +5,26 @@
 
 void GameScene::Initialize()
 {
-	camera.transform.SetPosition({0.0f, 0.0f, -80.0f});
+#ifdef _DEBUG
+	camera.transform.SetPosition({ 0.0f, 0.0f, -80.0f });
 	light.directional.direction = { 10.0f, -10.0f, 0.0f };
 
 	player = Gfx::LoadModel("Res/3DModel/Player/Player.glb");
 	lowEnemy = Gfx::LoadModel("Res/3DModel/LowEnemy/LowEnemy.glb");
+	boss = Gfx::LoadModel("Res/3DModel/Boss/Boss.glb");
+
 	playerInstance = Gfx::CreateAnimInstance(player);
 	lowEnemyInstance = Gfx::CreateAnimInstance(lowEnemy);
-	playerTransform.SetPosition({-20.0f, 0.0f, 0.0f});
-	lowEnemyTransform.SetPosition(Vector3::Zero);
+	bossInstance = Gfx::CreateAnimInstance(boss);
+
+	playerTransform.SetPosition({ -40.0f, 0.0f, 0.0f });
+	bossTransform.SetPosition({ Vector3::Zero });
+	lowEnemyTransform.SetPosition({ 40.0f, 0.0f, 0.0f });
+		;
 	Gfx::PlayAnim(playerInstance, playerClipIndex, true);
 	Gfx::PlayAnim(lowEnemyInstance, lowEnemyClipIndex, true);
+	Gfx::PlayAnim(bossInstance, bossClipIndex, true);
+#endif // _DEBUG
 	DEBUG_LOG("GameSceneのInitializeを通りました!\n");
 }
 
@@ -44,6 +53,14 @@ void GameScene::Update()
 		if (Input::IsKeyPushed(KeyCode::Button::E)) Gfx::CrossFadeAnim(lowEnemyInstance, lowEnemyClipIndex, 0.5f, true);
 		Gfx::UpdateAnim(lowEnemyInstance, Time::DeltaTime());
 	}
+	if (bossInstance.IsValid())
+	{
+		if (Input::IsKeyPushed(KeyCode::Button::D5)) bossClipIndex--;
+		if (Input::IsKeyPushed(KeyCode::Button::D6)) bossClipIndex++;
+		bossClipIndex = std::max(0, bossClipIndex);
+		if (Input::IsKeyPushed(KeyCode::Button::B)) Gfx::CrossFadeAnim(bossInstance, bossClipIndex, 0.5f, true);
+		Gfx::UpdateAnim(bossInstance, Time::DeltaTime());
+	}
 
 #endif // _DEBUG
 }
@@ -66,12 +83,18 @@ void GameScene::Terminate()
 
 void GameScene::Draw()
 {
+#ifdef _DEBUG
 	Gfx::DrawAnimatedModel(playerInstance, playerTransform);
 	Gfx::DrawAnimatedModel(lowEnemyInstance, lowEnemyTransform);
+	Gfx::DrawAnimatedModel(bossInstance, bossTransform);
 
-	std::string playerClipIndexStr{ std::format("PlayerClipIndex : {}", playerClipIndex)};
-	std::string lowEnemyClipIndexStr{ std::format("LowEnemyClipIndex : {}", lowEnemyClipIndex)};
+	std::string playerClipIndexStr{ std::format("PlayerClipIndex : {}", playerClipIndex) };
+	std::string lowEnemyClipIndexStr{ std::format("LowEnemyClipIndex : {}", lowEnemyClipIndex) };
+	std::string bossClipIndexStr{ std::format("BossClipIndex : {}", bossClipIndex) };
+	Gfx::DrawString(playerClipIndexStr.c_str(), { 0.0f, 20.0f });
+	Gfx::DrawString(lowEnemyClipIndexStr.c_str(), { 0.0f, 40.0f });
+	Gfx::DrawString(bossClipIndexStr.c_str(), { 0.0f, 60.0f });
+#endif // _DEBUG
+
 	Gfx::DrawString("GameScene", Vector2::Zero);
-	Gfx::DrawString(playerClipIndexStr.c_str(), {0.0f, 20.0f});
-	Gfx::DrawString(lowEnemyClipIndexStr.c_str(), {0.0f, 40.0f});
 }
