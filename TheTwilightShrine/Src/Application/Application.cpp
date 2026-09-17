@@ -12,7 +12,11 @@ Application::Application()
 		isInitialized = false;
 		return;
 	}
-	SceneManager::Instance().RequestSceneChange(SceneType::Title); // とりあえず最初はタイトルから
+#ifdef _DEBUG
+	SceneManager::Instance().RequestSceneChange(SceneType::Game); // デバッグ用にゲームシーンから
+#else
+	SceneManager::Instance().RequestSceneChange(SceneType::Title);
+#endif // _DEBUG
 	isInitialized = true; // ここまで来たら成功とする
 }
 
@@ -27,7 +31,7 @@ Application::~Application()
 void Application::Run()
 {
 	// ゲームループ(後でApplicationファイルへと分離)
-	while (TSLib::ProcessMessage())
+	while (TSLib::ProcessMessage() && !Input::IsKeyPushed(KeyCode::Button::ESC))
 	{
 		// フレームの最初で予約反映を行おうとする
 		SceneManager::Instance().ApplyPendingSceneChange();
