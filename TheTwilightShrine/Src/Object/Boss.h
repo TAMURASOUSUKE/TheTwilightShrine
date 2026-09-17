@@ -5,7 +5,7 @@
 // Bossを実装する
 class Boss final : public ObjectBase
 {
-private:
+public:
 	Boss(const Transform& _transform);
 	~Boss() = default;
 

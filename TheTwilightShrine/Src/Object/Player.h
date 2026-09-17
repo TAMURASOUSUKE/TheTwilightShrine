@@ -5,7 +5,7 @@
 // Playerを実装する
 class Player final : public ObjectBase
 {
-private:
+public:
 	Player(const Transform& _transform);
 	~Player() = default;
 
@@ -20,5 +20,10 @@ private:
 
 private:
 	Transform transform{}; // 位置、回転、スケール
+
+#ifdef _DEBUG
+	ModelHandle player{};
+#endif // _DEBUG
+
 
 };

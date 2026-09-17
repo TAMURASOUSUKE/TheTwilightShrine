@@ -4,6 +4,7 @@
 bool ObjectManager::Register(std::unique_ptr<ObjectBase>  _object)
 {
 	if (!_object)return false;
+	// 保留させる
 	pendingObjects.emplace_back(std::move(_object)); 
  }
 
