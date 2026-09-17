@@ -2,12 +2,12 @@
 #include <TSLib.h>
 #include "ObjectBase.h"
 
-// Bossを実装する
-class Boss final : public ObjectBase
+// 雑魚敵を実装する
+class LowEnemy final : public ObjectBase
 {
 private:
-	Boss() = default; // 一旦デフォルト
-	~Boss() = default;
+	LowEnemy() = default; // 一旦デフォルト
+	~LowEnemy() = default;
 
 	// 更新
 	void Update() override;
