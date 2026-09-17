@@ -31,7 +31,7 @@ Application::~Application()
 void Application::Run()
 {
 	// ゲームループ(後でApplicationファイルへと分離)
-	while (TSLib::ProcessMessage())
+	while (TSLib::ProcessMessage() && !Input::IsKeyPushed(KeyCode::Button::ESC))
 	{
 		// フレームの最初で予約反映を行おうとする
 		SceneManager::Instance().ApplyPendingSceneChange();

@@ -12,6 +12,14 @@ Player::Player(const Transform& _transform) : transform{ _transform }, clipIndex
 #endif // _DEBUG
 }
 
+Player::~Player()
+{
+#ifdef _DEBUG
+	Gfx::DestroyAnim(instance);
+	Gfx::Unload(handle);
+#endif // _DEBUG
+}
+
 void Player::Update()
 {
 #ifdef _DEBUG

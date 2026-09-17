@@ -20,7 +20,7 @@ public:
 	virtual ObjectID GetID() const { return ObjectID::None; }
 
 	// オブジェクトを破壊
-	void Destory() { isActive = false; }
+	void Destroy() { isActive = false; }
 
 	// 生存しているかを取得
 	bool IsActive() const { return  isActive; }

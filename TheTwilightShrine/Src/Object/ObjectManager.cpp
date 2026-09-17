@@ -1,4 +1,5 @@
 #include <utility>
+#include <algorithm>
 #include "ObjectManager.h"
 
 bool ObjectManager::Register(std::unique_ptr<ObjectBase>  _object)
@@ -6,6 +7,7 @@ bool ObjectManager::Register(std::unique_ptr<ObjectBase>  _object)
 	if (!_object)return false;
 	// 保留させる
 	pendingObjects.emplace_back(std::move(_object)); 
+	return  true;
  }
 
 void ObjectManager::Reset()
@@ -22,6 +24,9 @@ void  ObjectManager::Update()
 		if (!object->IsActive()) continue;
 		object->Update();
 	}
+
+	// 死んでいるオブジェクトがあれば消す
+	Destroy();
 
 	// 全ての更新が終わった後に登録
 	CommitPendingObjects();
@@ -55,4 +60,10 @@ void ObjectManager::CommitPendingObjects()
 		objects.emplace_back(std::move(object));
 	}
 	pendingObjects.clear(); // 何らかの理由で残った物は消す
+}
+
+void ObjectManager::Destroy()
+{
+	// 芯でいているオブジェクトを破棄
+	std::erase_if(objects, [](const std::unique_ptr<ObjectBase>& _object) { return !_object->IsActive(); });
 }

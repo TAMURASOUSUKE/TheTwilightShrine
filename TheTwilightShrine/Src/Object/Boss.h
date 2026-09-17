@@ -7,7 +7,7 @@ class Boss final : public ObjectBase
 {
 public:
 	Boss(const Transform& _transform);
-	~Boss() = default;
+	~Boss();
 
 	// 更新
 	void Update() override;

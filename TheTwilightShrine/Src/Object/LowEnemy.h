@@ -7,7 +7,7 @@ class LowEnemy final : public ObjectBase
 {
 public:
 	LowEnemy(const Transform& _transform);
-	~LowEnemy() = default;
+	~LowEnemy();
 
 	// 更新
 	void Update() override;

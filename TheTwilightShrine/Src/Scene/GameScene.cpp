@@ -5,6 +5,15 @@
 void GameScene::Initialize()
 {
 	CreateCharacter();
+
+#ifdef _DEBUG
+	camera.transform.Translate({ 0.0f, 0.0f, -10.0f });
+	Gfx::SetCamera(camera);
+
+	light.directional.direction = { 1.0f, -1.0f, 0.0f };
+#endif // _DEBUG
+
+
 	DEBUG_LOG("GameSceneのInitializeを通りました!\n");
 }
 
@@ -55,9 +64,9 @@ void GameScene::CreateCharacter()
 	Transform bossTransform{};
 
 	// 座標指定
-	playerTransform.SetPosition({ -2.0f, 0.0f, 0.0f });
+	playerTransform.SetPosition({ -4.0f, 0.0f, 0.0f });
 	lowEnemyTransform.SetPosition(Vector3::Zero);
-	bossTransform.SetPosition({ 2.0f, 0.0f, 0.0f });
+	bossTransform.SetPosition({ 4.0f, 0.0f, 0.0f });
 
 	// 実際の生成
 	ObjectFactory::CreatePlayer(playerTransform);

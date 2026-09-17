@@ -7,7 +7,7 @@ class Player final : public ObjectBase
 {
 public:
 	Player(const Transform& _transform);
-	~Player() = default;
+	~Player();
 
 	// 更新
 	void Update() override;

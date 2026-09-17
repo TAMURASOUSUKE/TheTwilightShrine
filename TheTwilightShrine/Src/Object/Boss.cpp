@@ -12,6 +12,14 @@ Boss::Boss(const Transform& _transform) : transform{ _transform }, clipIndex{ BO
 #endif // _DEBUG
 }
 
+Boss::~Boss()
+{
+#ifdef _DEBUG
+	Gfx::DestroyAnim(instance);
+	Gfx::Unload(handle);
+#endif // _DEBUG
+}
+
 void Boss::Update()
 {
 #ifdef _DEBUG

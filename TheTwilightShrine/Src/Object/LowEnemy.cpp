@@ -12,6 +12,14 @@ LowEnemy::LowEnemy(const Transform& _transform) : transform{ _transform }, clipI
 #endif // _DEBUG
 }
 
+LowEnemy::~LowEnemy()
+{
+#ifdef _DEBUG
+	Gfx::DestroyAnim(instance);
+	Gfx::Unload(handle);
+#endif // _DEBUG
+}
+
 void LowEnemy::Update()
 {
 #ifdef _DEBUG

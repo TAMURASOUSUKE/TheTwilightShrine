@@ -17,7 +17,6 @@ public:
 		return instance;
 	}
 
-
 	// 登録関数
 	bool Register(std::unique_ptr<ObjectBase>  _object);
 
@@ -40,6 +39,8 @@ private:
 	// 登録保留されたオブジェクトを一括登録する
 	void CommitPendingObjects();
 
+	// オブジェクトの破棄
+	void Destroy();
 private:
 	std::vector<std::unique_ptr<ObjectBase>> objects{}; // 登録されたオブジェクト
 	std::vector<std::unique_ptr<ObjectBase>> pendingObjects{}; // 登録保留されたオブジェクト
