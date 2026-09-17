@@ -6,7 +6,8 @@
 void GameScene::Initialize()
 {
 #ifdef _DEBUG
-	camera.transform.SetPosition({ 0.0f, 0.0f, -80.0f });
+	camera.transform.SetPosition({ 0.0f, 0.3f, -3.0f });
+	Gfx::SetCamera(camera);
 	light.directional.direction = { 10.0f, -10.0f, 0.0f };
 
 	player = Gfx::LoadModel("Res/3DModel/Player/Player.glb");
@@ -18,8 +19,8 @@ void GameScene::Initialize()
 	bossInstance = Gfx::CreateAnimInstance(boss);
 
 	playerTransform.SetPosition({ -40.0f, 0.0f, 0.0f });
-	bossTransform.SetPosition({ Vector3::Zero });
-	lowEnemyTransform.SetPosition({ 40.0f, 0.0f, 0.0f });
+	// bossTransform.SetPosition({ Vector3::Zero });
+	lowEnemyTransform.SetPosition({ 00.0f, 0.0f, 0.0f });
 		;
 	Gfx::PlayAnim(playerInstance, playerClipIndex, true);
 	Gfx::PlayAnim(lowEnemyInstance, lowEnemyClipIndex, true);
@@ -86,7 +87,7 @@ void GameScene::Draw()
 #ifdef _DEBUG
 	Gfx::DrawAnimatedModel(playerInstance, playerTransform);
 	Gfx::DrawAnimatedModel(lowEnemyInstance, lowEnemyTransform);
-	Gfx::DrawAnimatedModel(bossInstance, bossTransform);
+	// Gfx::DrawAnimatedModel(bossInstance, bossTransform);
 
 	std::string playerClipIndexStr{ std::format("PlayerClipIndex : {}", playerClipIndex) };
 	std::string lowEnemyClipIndexStr{ std::format("LowEnemyClipIndex : {}", lowEnemyClipIndex) };
