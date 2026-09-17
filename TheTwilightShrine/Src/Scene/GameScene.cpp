@@ -25,6 +25,8 @@ void GameScene::Initialize()
 	Gfx::PlayAnim(playerInstance, playerClipIndex, true);
 	Gfx::PlayAnim(lowEnemyInstance, lowEnemyClipIndex, true);
 	Gfx::PlayAnim(bossInstance, bossClipIndex, true);
+
+
 #endif // _DEBUG
 	DEBUG_LOG("GameSceneのInitializeを通りました!\n");
 }
