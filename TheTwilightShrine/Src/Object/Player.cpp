@@ -1,5 +1,10 @@
 #include "Player.h"
 
+Player::Player(const Transform& _transform) : transform{ _transform }
+{
+
+}
+
 void Player::Update()
 {
 

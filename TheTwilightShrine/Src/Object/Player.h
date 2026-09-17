@@ -6,7 +6,7 @@
 class Player final : public ObjectBase
 {
 private:
-	Player() = default; // 一旦デフォルト
+	Player(const Transform& _transform);
 	~Player() = default;
 
 	// 更新

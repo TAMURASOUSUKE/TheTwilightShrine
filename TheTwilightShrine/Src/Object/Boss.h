@@ -6,7 +6,7 @@
 class Boss final : public ObjectBase
 {
 private:
-	Boss() = default; // 一旦デフォルト
+	Boss(const Transform& _transform);
 	~Boss() = default;
 
 	// 更新

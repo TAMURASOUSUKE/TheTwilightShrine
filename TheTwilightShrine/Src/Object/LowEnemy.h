@@ -6,7 +6,7 @@
 class LowEnemy final : public ObjectBase
 {
 private:
-	LowEnemy() = default; // 一旦デフォルト
+	LowEnemy(const Transform& _transform);
 	~LowEnemy() = default;
 
 	// 更新
