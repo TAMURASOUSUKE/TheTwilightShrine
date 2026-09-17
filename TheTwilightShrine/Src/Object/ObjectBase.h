@@ -19,8 +19,11 @@ public:
 	// オブジェクトのIDを返す
 	virtual ObjectID GetID() const { return ObjectID::None; }
 
+	// オブジェクトを破壊
+	void Destory() { isActive = false; }
+
 	// 生存しているかを取得
-	bool IsActive() { return  isActive; }
+	bool IsActive() const { return  isActive; }
 
 protected:
 	bool isActive{ false }; // 生存してるか

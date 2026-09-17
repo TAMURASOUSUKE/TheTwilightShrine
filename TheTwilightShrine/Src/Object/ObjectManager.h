@@ -37,8 +37,11 @@ private:
 	// シングルトンのためコンストラクタはprivate
 	ObjectManager() = default;
 
+	// 登録保留されたオブジェクトを一括登録する
+	void CommitPendingObjects();
+
 private:
 	std::vector<std::unique_ptr<ObjectBase>> objects{}; // 登録されたオブジェクト
-	std::vector<std::unique_ptr<ObjectBase>> reservedObjects{}; // 登録予約されたオブジェクト
+	std::vector<std::unique_ptr<ObjectBase>> pendingObjects{}; // 登録保留されたオブジェクト
 
 };
