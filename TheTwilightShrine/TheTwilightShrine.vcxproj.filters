@@ -17,6 +17,9 @@
     <Filter Include="ソース ファイル\Src\Application">
       <UniqueIdentifier>{3d489249-51c5-41a4-9aaf-6d0e3d068f8d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Src\Object">
+      <UniqueIdentifier>{dcded4e2-512e-42dc-b9ce-41aeb4d70089}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -36,6 +39,12 @@
     </ClCompile>
     <ClCompile Include="Src\Application\Application.cpp">
       <Filter>ソース ファイル\Src\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Object\ObjectManager.cpp">
+      <Filter>ソース ファイル\Src\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Object\ObjectFactory.cpp">
+      <Filter>ソース ファイル\Src\Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -59,6 +68,18 @@
     </ClInclude>
     <ClInclude Include="Src\Application\Application.h">
       <Filter>ソース ファイル\Src\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Object\ObjectManager.h">
+      <Filter>ソース ファイル\Src\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Object\ObjectBase.h">
+      <Filter>ソース ファイル\Src\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Object\ObjectFactory.h">
+      <Filter>ソース ファイル\Src\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Constant\GameConstant.h">
+      <Filter>ソース ファイル\Src\Constant</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

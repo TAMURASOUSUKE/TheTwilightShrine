@@ -143,6 +143,8 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Src\Application\Application.cpp" />
+    <ClCompile Include="Src\Object\ObjectFactory.cpp" />
+    <ClCompile Include="Src\Object\ObjectManager.cpp" />
     <ClCompile Include="Src\Scene\GameScene.cpp" />
     <ClCompile Include="Src\Scene\SceneFactory.cpp" />
     <ClCompile Include="Src\Scene\SceneManager.cpp" />
@@ -150,7 +152,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Application\Application.h" />
+    <ClInclude Include="Src\Constant\GameConstant.h" />
     <ClInclude Include="Src\Constant\SceneConstant.h" />
+    <ClInclude Include="Src\Object\ObjectBase.h" />
+    <ClInclude Include="Src\Object\ObjectFactory.h" />
+    <ClInclude Include="Src\Object\ObjectManager.h" />
     <ClInclude Include="Src\Scene\GameScene.h" />
     <ClInclude Include="Src\Scene\SceneBase.h" />
     <ClInclude Include="Src\Scene\SceneFactory.h" />
