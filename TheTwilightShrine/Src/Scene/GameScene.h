@@ -28,6 +28,10 @@ public:
 	SceneType GetType() const override { return SceneType::Game; }
 
 private:
+	// シーン内のキャラクター作成をFactoryに依頼する
+	void CreateCharacter();
+
+private:
 
 #ifdef _DEBUG
 	bool isUpdate{ false }; // Update関数を通ったか
@@ -35,20 +39,6 @@ private:
 
 	Camera camera{};
 	SceneLight light{};
-
-	// モデル動作テスト(本来はResourceManagerの役目)
-	ModelHandle player{};
-	ModelHandle lowEnemy{};
-	ModelHandle boss{};
-	AnimInstanceHandle playerInstance{};
-	AnimInstanceHandle lowEnemyInstance{};
-	AnimInstanceHandle bossInstance{};
-	Transform playerTransform{};
-	Transform lowEnemyTransform{};
-	Transform bossTransform{};
-	int playerClipIndex{ 0 }; // PlayerのClipIndex
-	int lowEnemyClipIndex{ 0 }; // 雑魚敵のClipIndex
-	int bossClipIndex{ 0 }; // ボスのClipIndex
 
 #endif // _DEBUG
 

@@ -18,6 +18,9 @@ public:
 	// 描画
 	void Draw() override;
 
+	// IDのGetter
+	ObjectID GetID() const  override { return ObjectID::Player; }
+
 private:
 	Transform transform{}; // 位置、回転、スケール
 	int clipIndex{ 0 }; // AnimationのClipIndex

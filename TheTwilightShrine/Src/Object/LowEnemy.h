@@ -18,6 +18,9 @@ public:
 	// 描画
 	void Draw() override;
 
+	// IDのGetter
+	ObjectID GetID() const  override { return ObjectID::Enemy; }
+
 private:
 	Transform transform{}; // 位置、回転、スケール
 	int clipIndex{ 0 }; // AnimationのClipIndex
@@ -25,7 +28,6 @@ private:
 #ifdef _DEBUG
 	ModelHandle handle{};
 	AnimInstanceHandle instance{};
-	int clipIndex{ 0 }; // AnimationのClipIndex
 #endif // _DEBUG
 
 };
