@@ -26,6 +26,6 @@ public:
 	bool IsActive() const { return  isActive; }
 
 protected:
-	bool isActive{ false }; // 生存してるか
+	bool isActive{ true }; // 生存してるか
 
 };

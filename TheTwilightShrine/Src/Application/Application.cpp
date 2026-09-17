@@ -12,7 +12,11 @@ Application::Application()
 		isInitialized = false;
 		return;
 	}
-	SceneManager::Instance().RequestSceneChange(SceneType::Title); // とりあえず最初はタイトルから
+#ifdef _DEBUG
+	SceneManager::Instance().RequestSceneChange(SceneType::Game); // デバッグ用にゲームシーンから
+#else
+	SceneManager::Instance().RequestSceneChange(SceneType::Title);
+#endif // _DEBUG
 	isInitialized = true; // ここまで来たら成功とする
 }
 

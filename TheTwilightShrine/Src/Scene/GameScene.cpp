@@ -61,6 +61,6 @@ void GameScene::CreateCharacter()
 
 	// 実際の生成
 	ObjectFactory::CreatePlayer(playerTransform);
-	ObjectFactory::CreatePlayer(lowEnemyTransform);
-	ObjectFactory::CreatePlayer(bossTransform);
+	ObjectFactory::CreateLowEnemy(lowEnemyTransform);
+	ObjectFactory::CreateBoss(bossTransform);
 }
