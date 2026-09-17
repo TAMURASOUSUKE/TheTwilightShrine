@@ -20,5 +20,12 @@ public:
 
 private:
 	Transform transform{}; // 位置、回転、スケール
+	int clipIndex{ 0 }; // AnimationのClipIndex
+
+#ifdef _DEBUG
+	ModelHandle handle{};
+	AnimInstanceHandle instance{};
+	int clipIndex{ 0 }; // AnimationのClipIndex
+#endif // _DEBUG
 
 };
